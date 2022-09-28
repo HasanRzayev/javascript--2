@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="container" >
+                <input  id = "a" type ="text" >
+                <input   id = "b" type ="text" > 
+                <button  onclick="change()">Start</button>
+        </div>
+        <div>
+            <div class="container_2" >
+                <input  id = "one" type ="text" >
+                <h1>x<sup>2</sup></h1>
+                <h1>+</h1>
+                <input  id = "two" type ="text" > 
+                <h1>x+</h1>
+               
+                <input   id = "three" type ="text" > 
+                <h1>=0</h1>
+                
+                <button width="500" onclick="start()">Start</button>
+
+                <h1>x1=</h1>
+                <h1 id="answer_1">0</h1>
+                <h1>x2=</h1>
+                <h1 id="answer_2">0</h1>
+                <h1 id="no_answer">0</h1>
+
+            </div>
+        </div>
+        <div class="container" >
+            <table id="table" ></table>
+        </div>
+
+        <div class="container" >
+            <table id="table_1" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_2" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_3" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_4" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_5" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_6" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_7" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_8" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_9" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_10" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_11" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_12" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_13" ></table>
+        </div>
+        <div class="container" >
+            <table id="table_14" ></table>
+        </div>
+
+    </div>
+  
+    <script>
+               function start(){
+                let one =parseInt( document.getElementById("one").value);
+                let two = parseInt(document.getElementById("two").value);
+                let three = parseInt(document.getElementById("three").value);
+                let answer_1 = document.getElementById("answer_1");
+                let answer_2 = document.getElementById("answer_2");
+                let no_answer = document.getElementById("no_answer");
+                let discret=two*two-(4*one*three);
+                if(discret>0){
+                    answer_1.innerHTML=((two*(-1))-Math.sqrt(discret))/(2*one);
+                    answer_2.innerHTML=((two*(-1))+Math.sqrt(discret))/(2*one);
+                }
+                else if(discret==0){
+                    answer_1.innerHTML=(two*(-1))/2*one;
+                    answer_2.innerHTML=(two*(-1))/2*one;
+                }
+                else{
+                    no_answer.innerHTML="no answer";
+                    answer_1.innerHTML="no";
+                    answer_2.innerHTML="no";
+                }
+        }
+
+
+        const table = document.getElementById("table");
+        const table_1 = document.getElementById("table_1");
+        const table_2 = document.getElementById("table_2");
+        const table_3 = document.getElementById("table_3");
+        const table_4 = document.getElementById("table_4");
+        const table_5 = document.getElementById("table_5");
+        const table_6 = document.getElementById("table_6");
+        const table_7 = document.getElementById("table_7");
+        const table_8 = document.getElementById("table_8");
+        const table_9 = document.getElementById("table_9");
+        const table_10 = document.getElementById("table_10");
+        const table_11 = document.getElementById("table_11");
+        const table_12 = document.getElementById("table_12");
+        const table_13 = document.getElementById("table_13");
+        const table_14 = document.getElementById("table_14");
+
+        html = "";
+        html_1 = "";
+        html_2 = "";
+        html_3 = "";
+        html_4 = "";
+        html_5 = "";
+        html_6 = "";
+        html_7 = "";
+        html_8 = "";
+        html_9 = "";
+        html_10 = "";
+        html_11 = "";
+        html_12 = "";
+        html_13 = "";
+        html_14 = "";
+        for(let i = 0; i <4; i++) {
+                html += "<tr>";
+                for(let j = 0; j < 4; j++) {
+                    if(j==0  ||  j==3 ) html += `<td bgcolor="green">  </td>`;
+                    else if(i==0  ||  i==3 ) html += `<td bgcolor="green">  </td>`;
+                    else html += `<td bgcolor="white">  </td>`
+                }
+                html += "</tr>"
+
+            }
+        for(let i = 0; i <4; i++) {
+                html_1 += "<tr>";
+                for(let j = 0; j < 4; j++) {
+               
+                     if(j == 0  ||  j == 2 ) html_1 += `<td bgcolor="green">  </td>`;
+                    else{html_1 += `<td bgcolor="white">  </td>`; 
+
+                    }
+                }
+                html_1 += "</tr>"
+            }
+            for(let i = 0; i <4; i++) {
+                html_2 += "<tr>";
+                for(let j = 0; j < 4; j++) {
+               
+                     if((i+j)%2==0 ) html_2 += `<td bgcolor="green">  </td>`;
+                    else{html_2 += `<td bgcolor="white">  </td>`; 
+
+                    }
+                }
+                html_2 += "</tr>"
+            }
+            for(let i = 0; i <8; i++) {
+                html_3 += "<tr>";
+                for(let j = 0; j < 8; j++) {
+               
+                    if(j>=i && j<=7-i) html_3 += `<td bgcolor="green">  </td>`;
+                    else if(j<=i && j>=7-i) html_3 += `<td bgcolor="green">  </td>`;
+                    else{html_3 += `<td bgcolor="white">  </td>`; 
+
+                    }
+                }
+                html_3 += "</tr>"
+            }
+            for(let i = 0; i <4; i++) {
+                html_5 += "<tr>";
+                for(let j = 0; j < 4; j++) {
+               
+                    if(i==1 || i==3) html_5 += `<td bgcolor="green">  </td>`;
+                    
+                    else{html_5 += `<td bgcolor="white">  </td>`; 
+
+                    }
+                }
+                html_5 += "</tr>"
+            }
+            for(let i = 0; i <4; i++) {
+                html_6 += "<tr>";
+                for(let j = 0; j < 4; j++) {
+               
+                    if(i+j<4) html_6 += `<td bgcolor="green">  </td>`;
+                    
+                    else{html_6 += `<td bgcolor="white">  </td>`; 
+
+                    }
+                }
+                html_6 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_7 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+               
+                  html_7 += `<td  bgcolor="white" "> `;
+                  html_7 += (i*5)+j+1;
+                  html_7 += `</td "> `;
+                }
+                html_7 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_8 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    if((i+j)%2==0){
+                        html_8 += `<td  bgcolor="white" "> `;
+                        html_8 += 1;
+                        html_8 += `</td "> `;
+                    }
+                    else{
+                        html_8 += `<td  bgcolor="white" "> `;
+                        html_8 += 0;
+                        html_8 += `</td "> `;
+                    }
+                }
+                html_8 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_9 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    
+                        html_9 += `<td  bgcolor="white" "> `;
+                            html_9 += i+j+1;
+                            html_9 += `</td "> `;
+                    
+                   
+                }
+                html_9 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_10 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    
+                    html_10 += `<td  bgcolor="white" "> `;
+                            html_10 += j+1;
+                            html_10 += `</td "> `;
+                    
+                   
+                }
+                html_10 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_11 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    if((j-i+2)<=5/2){ 
+                        html_11 += `<td  bgcolor="white" "> `;
+                        html_11 += j+1;
+                        html_11 += `</td "> `;
+                    
+                    }
+                    else{
+                            html_11 += `<td  bgcolor="white" "> `;
+                            html_11 += 0;
+                            html_11 += `</td "> `;
+                    }
+                }
+                html_11 += "</tr>"
+            }
+            for(let i = 0; i <5; i++) {
+                html_12 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    if(j==0 ||j==2 ||j==4){ 
+                        html_12 += `<td  bgcolor="white" "> `;
+                            html_12 += j+1;
+                            html_12 += `</td "> `;
+                    
+                    }
+                    else{
+                        html_12 += `<td  bgcolor="white" "> `;
+                            html_12 += 0;
+                            html_12 += `</td "> `;
+                    }
+                }
+                html_12 += "</tr>"
+                
+            }
+            for(let i = 0; i <5; i++) {
+                html_13 += "<tr>";
+                for(let j = 0; j < 5; j++) {
+                    if((i+j)%2==0){ 
+                        html_13 += `<td  bgcolor="white" "> `;
+                            html_13 += i*5+j+1;
+                            html_13 += `</td "> `;
+                    
+                    }
+                    else{
+                        html_13 += `<td  bgcolor="white" "> `;
+                            html_13 += 0;
+                            html_13 += `</td "> `;
+                    }
+                }
+                html_13 += "</tr>"
+                
+            }
+            let count=0;
+            for(let i = 0; i <7; i++) {
+                html_14 += "<tr>";
+                    count=0;
+                for(let j = 0; j < 7; j++) {
+                   
+                    if(j>=i && j<=6-i){ 
+                        if(j<7/2){
+
+                            html_14 += `<td  bgcolor="white" "> `;
+                            html_14 += ++count;
+                            html_14 += `</td "> `;
+
+                        }
+                        else{
+                            html_14 += `<td  bgcolor="white" "> `;
+                            html_14 += (--count);
+                            html_14 += `</td "> `;
+                        }
+                    }
+                    else if(j<=i && j>=6-i){ 
+                        if(j<7/2){
+
+html_14 += `<td  bgcolor="white" "> `;
+html_14 += ++count;
+html_14 += `</td "> `;
+
+}
+else{
+html_14 += `<td  bgcolor="white" "> `;
+html_14 += (--count);
+html_14 += `</td "> `;
+}
+                    
+                    }
+                    else{
+                        html_14 += `<td  bgcolor="white" "> `;
+                            html_14 += 0;
+                            html_14 += `</td "> `;
+                    }
+                }
+                html_14 += "</tr>"
+                
+            }
+            table.innerHTML = html;
+            table_1.innerHTML = html_1;
+            table_2.innerHTML = html_2;
+            table_3.innerHTML = html_3;
+            table_4.innerHTML = html_4;
+            table_5.innerHTML = html_5;
+            table_6.innerHTML = html_6;
+            table_7.innerHTML = html_7;
+            table_8.innerHTML = html_8;
+            table_9.innerHTML = html_9;
+            table_10.innerHTML = html_10;
+            table_11.innerHTML = html_11;
+            table_12.innerHTML = html_12;
+            table_13.innerHTML = html_13;
+            table_13.innerHTML = html_14;
+
+
+        function change(){
+                let tmp = document.getElementById("a");
+                const parsed = parseFloat(tmp.value);
+                let len=  `${parsed}`.length;
+                if(Number.isInteger(parsed)==true && len<4){
+                    let option="";
+                    for (let index =len; index <4 ; index++) {
+                        option+="0";
+                    }
+                    option+=parsed;
+                    document.getElementById("b").value = option;
+                }
+                else if(Number.isInteger(parsed)==false && len<4){
+                    let option="";
+                    option+=parsed;
+                    for (let index =len; index <4 ; index++) {
+                        option+="0";
+                    }
+                  
+                    document.getElementById("b").value  = option;
+                }
+            
+        }
+    </script>
+</body>
+</html>
